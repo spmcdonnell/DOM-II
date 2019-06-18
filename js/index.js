@@ -68,3 +68,47 @@ window.addEventListener('mouseover', function(e) {
         }
     }
 });
+
+// Keydown
+var allPara = document.querySelectorAll('p');
+
+allPara.forEach(item => {
+    item.style.fontSize = '16px';
+});
+
+window.addEventListener('keydown', function(e) {
+    var currentParaFontSize = document.querySelector('p').style.fontSize;
+    var noLetters = Number(currentParaFontSize.replace(/\D/g, ''));
+
+    if (e.which === 83) {
+        allPara.forEach(item => {
+            item.style.fontSize = `${noLetters - 1}px`;
+        });
+    }
+
+    if (e.which === 66) {
+        allPara.forEach(item => {
+            item.style.fontSize = `${noLetters + 1}px`;
+        });
+    }
+});
+
+// Copy
+window.addEventListener('copy', function(e) {
+    alert(e.target.textContent);
+});
+
+// Mouseenter
+
+allPara.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = `rgb(${Math.round(Math.floor(Math.random() * (255 - 0 + 1)))}, ${Math.round(Math.floor(Math.random() * (255 - 0 + 1)))}, ${Math.round(Math.floor(Math.random() * (255 - 0 + 1)))})`;
+    });
+});
+
+// Mouseleave
+allPara.forEach(item => {
+    item.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = `transparent`;
+    });
+});

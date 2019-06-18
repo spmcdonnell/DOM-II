@@ -139,6 +139,7 @@ body {
 body {
   transition: background-color 0.15s linear, transform 0.5s ease-in-out;
   transform: scale(1);
+  font-size: 1rem;
 }
 body.small {
   transform: scale(0.5);
@@ -173,6 +174,12 @@ img {
 }
 .rotate {
   transform: rotate(360deg);
+}
+.btn {
+  transition: transform 1s cubic-bezier(0.43, -0.5, 0.6, 1.71);
+}
+.flip {
+  transform: rotate3d(1, 1, 1, 360deg);
 }
 .container {
   max-width: 800px;
