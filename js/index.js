@@ -112,3 +112,24 @@ allPara.forEach(item => {
         this.style.backgroundColor = `transparent`;
     });
 });
+
+/* -----------------------------
+Stop propagation and Stop nav items default behavior
+----------------------------- */
+
+document.querySelector('.nav-container').addEventListener('click', function(e) {
+    alert('Not propagating');
+});
+
+document.querySelector('.logo-heading').addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+
+var navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+});
