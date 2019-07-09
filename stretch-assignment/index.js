@@ -24,3 +24,19 @@ blocks.forEach(item => {
 });
 
 document.addEventListener('mouseup', whileUp);
+
+// Move block to top functionality
+var toTheTop = document.querySelectorAll('.to-the-top');
+
+toTheTop.forEach(item => {
+    item.parentNode.style.order = 0;
+});
+
+function reorder(e) {
+    this.parentNode.style.order -= 1;
+    e.stopPropagation();
+}
+
+toTheTop.forEach(item => {
+    item.addEventListener('click', reorder);
+});
