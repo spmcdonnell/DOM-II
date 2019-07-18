@@ -1,51 +1,88 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
-html, body {
-  font-family: 'Roboto', sans-serif;
+html,
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Indie Flower', cursive;
+body {
+    transition: background-color 0.15s linear, transform 0.5s ease-in-out;
+    transform: scale(1);
+    font-size: 1rem;
+}
+
+body.small {
+    transform: scale(0.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Indie Flower', cursive;
 }
 
 h1 {
-  font-size: 4rem;
+    font-size: 4rem;
 }
 
 h2 {
-  font-size: 3.2rem;
-  padding-bottom: 10px;
+    font-size: 3.2rem;
+    padding-bottom: 10px;
 }
 
 h4 {
-  font-size: 2.5rem;
-  padding-bottom: 10px;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
 }
 
 p {
-  line-height: 1.5;
-  font-size: 1.6rem;
-  padding-bottom: 10px;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    padding-bottom: 10px;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+    transition: transform 1s cubic-bezier(0.43, -0.5, 0.6, 1.71);
+}
+
+.rotate {
+    transform: rotate(360deg);
+}
+
+.btn {
+    transition: transform 1s cubic-bezier(0.43, -0.5, 0.6, 1.71);
+}
+
+.flip {
+    transform: rotate3d(1, 1, 1, 360deg);
 }
 
 .container {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
 
-  @media @mobile {
-    width: 90%;
-    margin: 0 5%;
-  }
+    @media @mobile {
+        width: 90%;
+        margin: 0 5%;
+    }
+}
+
+.main-container {
+    opacity: 0;
+}
+
+.main-container.loaded {
+    opacity: 1;
+    transition: 0.5s ease-in;
 }
